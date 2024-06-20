@@ -33,8 +33,14 @@ public class CharacterAnimation : MonoBehaviour
     {
         _animator.SetBool("onGround", false);
     }
+    public void DoubleJump()
+    {
+        _animator.SetTrigger("doubleJump");
+
+    }
     public void CancelJump()
     {
         _animator.SetBool("onGround", true);
+        _animator.ResetTrigger("doubleJump");
     }
 }
